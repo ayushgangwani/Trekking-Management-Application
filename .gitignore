@@ -1,30 +1,54 @@
-# Python
+# Do not upload secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Do not upload Python environments and generated files
+.venv/
+venv/
+env/
+ENV/
 __pycache__/
 *.py[cod]
-*.pyo
 
-# Flask
-instance/
+# Do not upload local databases, Celery schedules, or generated exports
+backend/instance/
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+backend/celerybeat-schedule.*
+backend/exports/
 
-# SQLite database
-*.db
-*.sqlite
-*.sqlite3
+# Do not upload frontend dependencies or build output
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+frontend/coverage/
+*.local
+*.tsbuildinfo
 
-# Node
-node_modules/
+# Do not upload logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Frontend build files
-dist/
-.vite/
-
-# IDE / Editor
+# Do not upload editor and operating-system files
 .vscode/
 .idea/
-
-# OS files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.eslintcache
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
+# Do not upload test artifacts
+cypress/videos/
+cypress/screenshots/
+__screenshots__/
