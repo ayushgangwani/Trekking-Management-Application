@@ -6,6 +6,7 @@ from flask_mail import Message
 import csv
 import os
 
+
 celery = Celery(
     "tma",
     broker="redis://localhost:6379/0",
